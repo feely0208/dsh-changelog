@@ -1,0 +1,8 @@
+# dsh-changelog bundle patch.
+#
+# 插入一行：本包自身（真正 import 的 cordis 插件，非纯 bundle）。
+# 加载后在 webServer 上挂 /dsh-changelog 出口，客户端注册侧栏图标 + 主区面板。
+
+- insert:
+    - id: changelog
+      name: '@deepwhale-cn/dsh-changelog'

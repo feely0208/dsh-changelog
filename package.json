@@ -1,0 +1,62 @@
+{
+  "name": "@deepwhale-cn/dsh-changelog",
+  "version": "0.1.0",
+  "description": "从 git 提交生成对外可发的版本说明：按约定式提交归类新增/修复/其他，自动过滤 chore/docs/ci/test/merge，支持中文润色映射与幂等写入 CHANGELOG",
+  "type": "module",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "bin": {
+    "dsh-changelog": "./bin/cli.mjs"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "dsh": ">=0.1.0-rc.6 <0.3.0",
+    "node": ">=18"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepwhale",
+    "changelog",
+    "release-notes",
+    "版本说明",
+    "变更日志"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feely0208/dsh-changelog.git"
+  },
+  "homepage": "https://deepwhale.org.cn/plugins.html",
+  "bugs": {
+    "url": "https://github.com/feely0208/dsh-changelog/issues"
+  },
+  "scripts": {
+    "test": "bash tests/run.sh"
+  }
+}
